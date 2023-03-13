@@ -54,7 +54,6 @@ function App() {
 
   if(retrieved && (!items || items.length === 0))
   {
-    debugger
     if(retrieved.items.length)
     {
       setItems(retrieved.items);
