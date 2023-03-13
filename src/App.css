@@ -7,8 +7,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: right;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -17,13 +16,20 @@ li {
   list-style-type: none;
 }
 
-.addButton {
-  margin-left: 10px;
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-  border-radius: 5px;
-  font-weight: bold;
+.goalNumberWidth {
+  max-width: 200px;
+}
+
+.container {
+  min-width: 50%;
+  margin-left: 20%;
+}
+
+.goalText {
+  margin: auto;
+  margin-right: 10px;
+  margin-left: 0px;
+  font-size: 35px;
 }
 
 .marginSmall {
