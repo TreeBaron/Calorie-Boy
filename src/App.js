@@ -54,13 +54,14 @@ function App() {
 
   if(retrieved && (!items || items.length === 0))
   {
+    debugger
     if(retrieved.items.length)
     {
       setItems(retrieved.items);
       countCalories();
     }
 
-    if(retrieved.goal)
+    if(retrieved.goal && goal === 0)
     {
       setGoal(retrieved.goal);
     }
