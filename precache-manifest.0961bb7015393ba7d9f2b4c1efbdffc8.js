@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "e7103e9f7eea91aa1e75",
+    "revision": "b4218cfbfbb6d3c4332c",
     "url": "/Calorie-Boy/static/css/main.bef1ecf4.chunk.css"
   },
   {
-    "revision": "e7103e9f7eea91aa1e75",
-    "url": "/Calorie-Boy/static/js/main.e7103e9f.chunk.js"
+    "revision": "b4218cfbfbb6d3c4332c",
+    "url": "/Calorie-Boy/static/js/main.b4218cfb.chunk.js"
   },
   {
     "revision": "b3abe6753dbf024482d5",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/Calorie-Boy/static/js/runtime~main.395204e6.js"
   },
   {
-    "revision": "89608a652867b39a9af2108e67861efc",
+    "revision": "5a2437196ece8aa3b414181ffa687581",
     "url": "/Calorie-Boy/index.html"
   }
 ];
