@@ -3,7 +3,7 @@ import './App.css';
 import { Button } from 'react-bootstrap';
 import Cookies from 'universal-cookie';
 
-const TopDisplay = ({ totalCalories, goal, setGoal, cookieKey, cookies, items }) => 
+const TopDisplay = ({ totalCalories, goal, setGoal, cookieKey, cookies, items, cookieOptions }) => 
 {
   return (
     <div className='container'>
@@ -17,7 +17,7 @@ const TopDisplay = ({ totalCalories, goal, setGoal, cookieKey, cookies, items })
               <input className='marginSmall goalNumberWidth' type="number" value={goal} onChange={(event) => {
                 let goalValue = parseInt(event.target.value) ? parseInt(event.target.value) : 0;
                 setGoal(goalValue);
-                cookies.set(cookieKey, {items: [...items], goal: goalValue}, {path: '/'});
+                cookies.set(cookieKey, {items: [...items], goal: goalValue}, cookieOptions);
                 }}/>
             </div>
           </div>
@@ -32,6 +32,11 @@ function App() {
   const [foodEntry, setFoodEntry] = useState("Bagel");
   const [calorieEntry, setCalorieEntry] = useState(100);
   const [totalCalories, setTotalCalories] = useState(0);
+
+  let cookieExpireDate = new Date();
+  let daysTilExpire = 6;
+  let result = cookieExpireDate.setDate(cookieExpireDate.getDate() + daysTilExpire);
+  let cookieOptions = {path: '/', expires: new Date(result)};
 
   const countCalories = (newItem) => {
     let total = 0;
@@ -70,7 +75,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
-          <TopDisplay totalCalories={totalCalories} goal={goal} setGoal={setGoal} cookieKey={cookieKey} cookies={cookies} items={items}/>
+          <TopDisplay totalCalories={totalCalories} goal={goal} setGoal={setGoal} cookieKey={cookieKey} cookies={cookies} items={items} cookieOptions={cookieOptions}/>
           <div class="container marginTop">
             <div class="row">
               <div class="col-sm-4 marginSmall">
@@ -90,7 +95,7 @@ function App() {
                 setFoodEntry('');
                 setCalorieEntry(0);
                 countCalories(newItem);
-                cookies.set(cookieKey, {items: [...items, newItem], goal: goal}, {path: '/'});
+                cookies.set(cookieKey, {items: [...items, newItem], goal: goal}, cookieOptions);
               }}>Add</Button>
             </div>
             {items.map(item => (
@@ -109,7 +114,7 @@ function App() {
                     }
                     setItems(newItems);
                     countCalories();
-                    cookies.set(cookieKey, {items: newItems, goal: goal}, {path: '/'});
+                    cookies.set(cookieKey, {items: newItems, goal: goal}, cookieOptions);
                   }}>Delete</Button>
                 </div>
               </li>
