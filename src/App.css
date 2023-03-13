@@ -13,24 +13,8 @@
   color: white;
 }
 
-.flexBox 
-{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 33%;
-  min-height: 10%;
-}
-
-ul {
-  padding-left: 2rem;
+li {
   list-style-type: none;
-}
-
-ul li {
-  background-color: white;
-  color:black;
-  padding: 10px;
 }
 
 .addButton {
@@ -40,10 +24,27 @@ ul li {
   border-color: #007bff;
   border-radius: 5px;
   font-weight: bold;
-  flex: 1;
 }
 
-.addText 
+.marginSmall {
+  margin: 5px;
+}
+
+.marginTop {
+  margin-top: 10px;
+}
+
+.flexBox
 {
-  flex: 3;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 50%;
+}
+
+.item 
+{
+  background-color: white;
+  color: #282c34;
 }

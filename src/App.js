@@ -17,16 +17,39 @@ function App() {
             quickly and easily without a bulky app
           </p>
         </div>
-        <div id='row' className='flexBox'>
-          <input className='addText' type="text" name="food" onChange={() => {console.log('ravioli')}}/>
-          <Button className='addButton btn btn-primary '>Add</Button>
-        </div>
-        <div id='row' className='flexBox'>
-          <ul>
-            <li>Wow, what a list item :)</li>
-            <li>Wow, what a list item :)</li>
-            <li>Wow, what a list item :)</li>
-          </ul>
+        <div>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-2 marginSmall"/>
+              <div class="col-sm-4 marginSmall">
+                Food
+              </div>
+              <div class="col-sm-2 marginSmall">
+                Calories
+              </div>
+              <div class="col-sm-2 marginSmall"/>
+            </div>
+            <div className='row'>
+              <div class="col-sm-2 marginSmall"/>
+              <input className='col-sm-4 marginSmall' type="text" name="food" onChange={() => {console.log('ravioli')}}/>
+              <input className='col-sm-2 marginSmall' type="number" name="calories" onChange={() => {console.log('ravioli')}}/>
+              <Button className='col-sm-2 marginSmall addButton btn btn-primary'>Add</Button>
+            </div>
+            <li>
+              <div class="row">
+                <div class="col-sm-2 marginSmall"/>
+                <div class="col-sm-4 marginSmall item">
+                  Food
+                </div>
+                <div class="col-sm-2 marginSmall item">
+                  Calories
+                </div>
+                <div class="col-sm-2 marginSmall item">
+                  Delete
+                </div>
+              </div>
+            </li>
+          </div>
         </div>
       </header>
     </div>
