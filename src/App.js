@@ -52,6 +52,14 @@ function App() {
     setTotalCalories(total);
   };
 
+  const countLoadedItems = (items) => {
+    let total = 0;
+    items.forEach(item => {
+      total += item.calories;
+    });
+    setTotalCalories(total);
+  };
+
   // Load Cookies if found...
   const cookies = new Cookies();
   const cookieKey = 'myCalorieCount';
@@ -62,7 +70,7 @@ function App() {
     if(retrieved.items.length)
     {
       setItems(retrieved.items);
-      countCalories();
+      countLoadedItems(retrieved.items);
     }
 
     if(retrieved.goal && goal === 0)
