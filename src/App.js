@@ -12,6 +12,7 @@ const TopDisplay = ({ totalCalories, goal, setGoal, cookieKey, cookies, items, c
               <h1>Calories</h1>
               <h2>{totalCalories}</h2>
             </div>
+            <div className='col-sm-4'/>
             <div className='col-sm-4'>
               <h1>Goal</h1>
               <input className='marginSmall goalNumberWidth' type="number" value={goal} onChange={(event) => {
@@ -86,18 +87,18 @@ function App() {
           <TopDisplay totalCalories={totalCalories} goal={goal} setGoal={setGoal} cookieKey={cookieKey} cookies={cookies} items={items} cookieOptions={cookieOptions}/>
           <div class="container marginTop">
             <div class="row">
-              <div class="col-sm-4 marginSmall">
+              <div class="col-sm-5 marginSmall">
                 Food
               </div>
               <div class="col-sm-2 marginSmall">
                 Calories
               </div>
-              <div class="col-sm-2 marginSmall"/>
+              <div class="col-sm-4 marginSmall"/>
             </div>
             <div className='row'>
-              <input className='col-sm-4 marginSmall' type="text" value={foodEntry} onChange={(event) => {setFoodEntry(event.target.value); }}/>
+              <input className='col-sm-5 marginSmall' type="text" value={foodEntry} onChange={(event) => {setFoodEntry(event.target.value); }}/>
               <input className='col-sm-2 marginSmall' type="number" value={calorieEntry} onChange={(event) => {setCalorieEntry(parseInt(event.target.value) ? parseInt(event.target.value) : 0)}}/>
-              <Button className='col-sm-2 marginSmall btn btn-primary' onClick={() => {
+              <Button className='col-sm-4 marginSmall btn btn-primary' onClick={() => {
                 let newItem = {food: foodEntry, calories: calorieEntry, id: new Date().getTime()};
                 setItems([...items, newItem]);
                 setFoodEntry('');
