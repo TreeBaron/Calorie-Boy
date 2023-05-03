@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Calorie-Boy/precache-manifest.bb9044351d455c406fadd491259b9ad2.js"
+  "/Calorie-Boy/precache-manifest.5b40b1cc9796d8b4292fc852e9a9eb27.js"
 );
 
 workbox.clientsClaim();
